@@ -169,7 +169,8 @@ class _LoginScreenState extends State<LoginScreen> {
       child: RaisedButton(
         elevation: 5.0,
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
         },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
@@ -224,7 +225,11 @@ class _LoginScreenState extends State<LoginScreen> {
             fontFamily: 'OpenSans',
           ),
         ),
-        icon: Image.asset("assets/images/google-logo.png", width: 32, fit: BoxFit.cover,),
+        icon: Image.asset(
+          "assets/images/google-logo.png",
+          width: 32,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
