@@ -116,8 +116,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildShoppingListItem(ShoppingList shoppingList,
-      Animation animation) {
+  Widget _buildShoppingListItem(
+      ShoppingList shoppingList, Animation animation) {
     return SizeTransition(
         sizeFactor: animation, child: _buildShoppingListCard(shoppingList));
   }
