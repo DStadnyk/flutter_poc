@@ -19,8 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildShoppingLists() {
     return AnimatedList(
       key: _listKey,
+      shrinkWrap: false,
       physics: BouncingScrollPhysics(),
-      padding: EdgeInsets.symmetric(vertical: 30),
+      padding: EdgeInsets.only(top: 20),
       initialItemCount: _shoppingLists.length,
       itemBuilder: (context, index, animation) {
         return _buildShoppingListItem(_shoppingLists[index], animation);
@@ -48,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Hero(
           tag: shoppingList.id,
           child: Material(
+            color: Colors.white,
             child: Container(
               height: 150,
               padding: EdgeInsets.all(20),
@@ -58,9 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 boxShadow: [
                   BoxShadow(
                     color: cardColor.withOpacity(0.4),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: Offset(5, 10),
+                    spreadRadius: 4,
+                    blurRadius: 8,
+                    offset: Offset(6, 10),
                   ),
                 ],
               ),
@@ -131,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Container(
               width: double.infinity,
               height: double.infinity,
-              color: Color(0xFFF3F5F9),
+              color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,10 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    height: 650,
-                    child: _buildShoppingLists(),
-                  )
+                  Expanded(child: _buildShoppingLists())
                 ],
               )),
         ),
