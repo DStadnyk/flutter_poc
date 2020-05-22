@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutterapp/mock/article.dart';
 import 'package:flutterapp/mock/shopping_lists.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class ShoppingListDetailsScreen extends StatefulWidget {
   final ShoppingList shoppingList;
@@ -17,6 +20,136 @@ class ShoppingListDetailsScreen extends StatefulWidget {
 }
 
 class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
+  final _articles = articles;
+
+  Widget _buildProgressBar() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Text(
+            "Progress",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              color: Colors.grey.shade900,
+            ),
+          ),
+          LinearPercentIndicator(
+            width: 200,
+            lineHeight: 7.0,
+            percent:
+                widget.shoppingList.checkedAmount / widget.shoppingList.amount,
+            trailing: Text(
+              "${100 * widget.shoppingList.checkedAmount ~/ widget.shoppingList.amount}%",
+              style: TextStyle(
+                  color: Colors.grey.shade900,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
+            ),
+            backgroundColor: Colors.grey.shade300,
+            linearStrokeCap: LinearStrokeCap.butt,
+            progressColor: widget.backgroundColor,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildArticlesList(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 300,
+      child: ListView.builder(
+          physics: BouncingScrollPhysics(),
+          itemCount: _articles.length,
+          itemBuilder: (BuildContext context, int index) =>
+              _buildArticleCard(_articles[index], index, context)),
+    );
+  }
+
+  Widget _buildArticleCard(Article article, int index, BuildContext context) {
+    return Container(
+      height: 100,
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      margin: EdgeInsets.only(bottom: 30),
+      child: Dismissible(
+        key: ObjectKey(article),
+        background: stackBehindDismiss(),
+        onDismissed: (direction) {
+          Article articleToDelete = _articles.elementAt(index);
+          deleteArticle(index);
+          Scaffold.of(context).showSnackBar(SnackBar(
+              content: Text("Item deleted"),
+              action: SnackBarAction(
+                  label: "UNDO",
+                  onPressed: () {
+                    //To undo deletion
+                    undoArticleDeletion(index, articleToDelete);
+                  })));
+        },
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                spreadRadius: 4,
+                blurRadius: 10,
+                offset: Offset(2, 2),
+              ),
+            ],
+          ),
+          child: Row(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Text(
+                    article.name,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.grey.shade900,
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void deleteArticle(index) {
+    setState(() {
+      _articles.removeAt(index);
+    });
+  }
+
+  void undoArticleDeletion(index, item) {
+    setState(() {
+      _articles.insert(index, item);
+    });
+  }
+
+  Widget stackBehindDismiss() {
+    return Container(
+      alignment: Alignment.centerRight,
+      padding: EdgeInsets.only(right: 20.0),
+      color: Colors.red,
+      child: Icon(
+        Icons.delete,
+        color: Colors.white,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +167,7 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                 tag: widget.shoppingList.id,
                 child: Material(
                   child: Container(
-                    height: 220,
+                    height: 200,
                     padding: EdgeInsets.only(top: 40, left: 20, right: 20),
                     decoration: BoxDecoration(
                       color: widget.backgroundColor,
@@ -43,17 +176,18 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                           color: widget.backgroundColor.withOpacity(0.4),
                           spreadRadius: 2,
                           blurRadius: 10,
-                          offset: Offset(5, 10),
+                          offset: Offset(5, 5),
                         ),
                       ],
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Text(
@@ -75,6 +209,9 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                                 color: Colors.grey.shade100,
                               ),
                             ),
+                            SizedBox(
+                              height: 20,
+                            ),
                           ],
                         ),
                       ],
@@ -82,6 +219,12 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                   ),
                 ),
               ),
+              SizedBox(height: 35),
+              _buildProgressBar(),
+              SizedBox(
+                height: 15,
+              ),
+              _buildArticlesList(context),
             ],
           ),
         ),
