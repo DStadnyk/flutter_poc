@@ -43,7 +43,7 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Text(
-            "Progress",
+            "Crossed",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w700,
@@ -87,7 +87,7 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
 
   Widget _buildArticleCard(Article article, int index, BuildContext context) {
     return Container(
-      height: 60,
+      height: 70,
       padding: EdgeInsets.symmetric(horizontal: 15),
       margin: EdgeInsets.only(bottom: 30),
       child: Dismissible(
@@ -121,19 +121,66 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
             ],
           ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              Column(
+              Row(
                 children: <Widget>[
-                  Text(
-                    article.name,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.grey.shade900,
-                    ),
-                  )
+                  Checkbox(
+                    checkColor: widget.backgroundColor,
+                    activeColor: Colors.grey.shade200,
+                    value: article.crossed,
+                    onChanged: (newValue) {
+                      article.crossed = newValue;
+                    },
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            "${article.quantity.toString()} x ",
+                            style: TextStyle(
+                              fontSize: 17,
+                              color: Colors.grey.shade900,
+                            ),
+                          ),
+                          Text(
+                            article.name,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.grey.shade900,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            "Category: ",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            article.categoryName,
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.grey.shade600),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
@@ -162,75 +209,103 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Hero(
-              tag: widget.shoppingList.id,
-              child: Material(
-                child: Container(
-                  height: 200,
-                  padding: EdgeInsets.only(top: 40, left: 20, right: 20),
-                  decoration: BoxDecoration(
-                    color: widget.backgroundColor,
-                    boxShadow: [
-                      BoxShadow(
-                        color: widget.backgroundColor.withOpacity(0.4),
-                        spreadRadius: 2,
-                        blurRadius: 10,
-                        offset: Offset(5, 5),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
-                    children: <Widget>[
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          Text(
-                            widget.shoppingList.title,
-                            style: TextStyle(
-                              fontSize: 30,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w900,
+        child: Stack(children: [
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Hero(
+                tag: widget.shoppingList.id,
+                child: Material(
+                  child: Container(
+                    height: 200,
+                    padding: EdgeInsets.only(top: 40, left: 20, right: 20),
+                    decoration: BoxDecoration(
+                      color: widget.backgroundColor,
+                      boxShadow: [
+                        BoxShadow(
+                          color: widget.backgroundColor.withOpacity(0.4),
+                          spreadRadius: 2,
+                          blurRadius: 10,
+                          offset: Offset(5, 5),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: <Widget>[
+                            Text(
+                              widget.shoppingList.title,
+                              style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            "Created on ${widget.shoppingList.dateCreated}",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.grey.shade100,
+                            SizedBox(
+                              height: 20,
                             ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                        ],
-                      ),
-                    ],
+                            Text(
+                              "Created on ${widget.shoppingList.dateCreated}",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.grey.shade100,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
+              SizedBox(height: 35),
+              _buildProgressBar(),
+              SizedBox(
+                height: 15,
+              ),
+              _buildArticlesList(context),
+            ],
+          ),
+          Positioned(
+            top: 20,
+            left: 5,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.more_vert),
+                    color: Colors.white,
+                    onPressed: () {},
+                  ),
+                ],
+              ),
             ),
-            SizedBox(height: 35),
-            _buildProgressBar(),
-            SizedBox(
-              height: 15,
-            ),
-            _buildArticlesList(context),
-          ],
-        ),
+          )
+        ]),
       ),
     );
   }
