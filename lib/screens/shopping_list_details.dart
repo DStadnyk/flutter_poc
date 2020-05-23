@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutterapp/mock/article.dart';
-import 'package:flutterapp/mock/shopping_lists.dart';
+import 'package:flutterapp/model/product.dart';
+import 'package:flutterapp/model/shopping_list.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
@@ -20,17 +20,24 @@ class ShoppingListDetailsScreen extends StatefulWidget {
 }
 
 class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
-  final _articles = articles;
+  ShoppingList getShoppingListObject() {
+    return widget.shoppingList;
+  }
 
-  void deleteArticle(index) {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void deleteProduct(index) {
     setState(() {
-      _articles.removeAt(index);
+      getShoppingListObject().rows.removeAt(index);
     });
   }
 
-  void undoArticleDeletion(index, item) {
+  void undoProductDeletion(index, item) {
     setState(() {
-      _articles.insert(index, item);
+      getShoppingListObject().rows.insert(index, item);
     });
   }
 
@@ -53,10 +60,10 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
           LinearPercentIndicator(
             width: 200,
             lineHeight: 7.0,
-            percent:
-                widget.shoppingList.checkedAmount / widget.shoppingList.amount,
+            percent: getShoppingListObject().getCheckedAmount() /
+                getShoppingListObject().rows.length,
             trailing: Text(
-              "${100 * widget.shoppingList.checkedAmount ~/ widget.shoppingList.amount}%",
+              "${100 * getShoppingListObject().getCheckedAmount() ~/ getShoppingListObject().rows.length}%",
               style: TextStyle(
                   color: Colors.grey.shade900,
                   fontSize: 16,
@@ -71,38 +78,41 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
     );
   }
 
-  Widget _buildArticlesList(BuildContext context) {
+  Widget _buildProductsList(BuildContext context) {
     return Expanded(
       child: Container(
         width: double.infinity,
         child: ListView.builder(
             shrinkWrap: false,
             physics: BouncingScrollPhysics(),
-            itemCount: _articles.length,
+            itemCount: getShoppingListObject().rows.length,
             itemBuilder: (BuildContext context, int index) =>
-                _buildArticleCard(_articles[index], index, context)),
+                _buildProductCard(index, context)),
       ),
     );
   }
 
-  Widget _buildArticleCard(Article article, int index, BuildContext context) {
+  Widget _buildProductCard(int index, BuildContext context) {
+    var product = getShoppingListObject().rows[index];
+
     return Container(
       height: 70,
       padding: EdgeInsets.symmetric(horizontal: 15),
       margin: EdgeInsets.only(bottom: 30),
       child: Dismissible(
-        key: ObjectKey(article),
+        key: ObjectKey(product),
         background: _buildDismissBackdrop(),
         onDismissed: (direction) {
-          Article articleToDelete = _articles.elementAt(index);
-          deleteArticle(index);
+          Product productToDelete =
+              getShoppingListObject().rows.elementAt(index);
+          deleteProduct(index);
           Scaffold.of(context).showSnackBar(SnackBar(
               content: Text("Item deleted"),
               action: SnackBarAction(
                   label: "UNDO",
                   onPressed: () {
                     //To undo deletion
-                    undoArticleDeletion(index, articleToDelete);
+                    undoProductDeletion(index, productToDelete);
                   })));
         },
         child: Container(
@@ -130,9 +140,12 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                   Checkbox(
                     checkColor: widget.backgroundColor,
                     activeColor: Colors.grey.shade200,
-                    value: article.crossed,
+                    value: getShoppingListObject().rows[index].crossed,
                     onChanged: (newValue) {
-                      article.crossed = newValue;
+                      setState(() {
+                        getShoppingListObject().rows[index].crossed = newValue;
+                        widget.shoppingList.rows[index].crossed = newValue;
+                      });
                     },
                   ),
                   Column(
@@ -142,14 +155,14 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                       Row(
                         children: <Widget>[
                           Text(
-                            "${article.quantity.toString()} x ",
+                            "${product.quantity.toString()} x ",
                             style: TextStyle(
                               fontSize: 17,
                               color: Colors.grey.shade900,
                             ),
                           ),
                           Text(
-                            article.name,
+                            product.name,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w700,
@@ -169,7 +182,7 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                                 fontSize: 14, fontWeight: FontWeight.w600),
                           ),
                           Text(
-                            article.categoryName,
+                            product.categoryName,
                             style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w700,
@@ -199,6 +212,31 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
       child: Icon(
         Icons.delete,
         color: Colors.white,
+      ),
+    );
+  }
+
+  Widget _buildTopBar() {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          IconButton(
+            icon: Icon(Icons.arrow_back),
+            color: Colors.white,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            color: Colors.white,
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }
@@ -276,34 +314,13 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
               SizedBox(
                 height: 15,
               ),
-              _buildArticlesList(context),
+              _buildProductsList(context),
             ],
           ),
           Positioned(
             top: 20,
             left: 5,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.arrow_back),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.more_vert),
-                    color: Colors.white,
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            ),
+            child: _buildTopBar(),
           )
         ]),
       ),

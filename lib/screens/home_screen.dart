@@ -3,8 +3,9 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterapp/mock/shopping_lists.dart';
+import 'package:flutterapp/model/shopping_list.dart';
 import 'package:flutterapp/screens/shopping_list_details.dart';
+import 'package:flutterapp/web_services/shopping_list_web_service.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -14,23 +15,39 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
 
-  final _shoppingLists = shoppingLists;
+  Future<List<ShoppingList>> futureShoppingList;
+
+  @override
+  void initState() {
+    super.initState();
+    futureShoppingList = ShoppingListWS.getShoppingLists();
+  }
 
   Widget _buildShoppingLists() {
-    return AnimatedList(
-      key: _listKey,
-      shrinkWrap: false,
-      physics: BouncingScrollPhysics(),
-      padding: EdgeInsets.only(top: 20),
-      initialItemCount: _shoppingLists.length,
-      itemBuilder: (context, index, animation) {
-        return _buildShoppingListItem(_shoppingLists[index], animation);
+    return FutureBuilder(
+      future: futureShoppingList,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return AnimatedList(
+            key: _listKey,
+            shrinkWrap: false,
+            physics: BouncingScrollPhysics(),
+            padding: EdgeInsets.only(top: 20),
+            initialItemCount: snapshot.data.length,
+            itemBuilder: (context, index, animation) {
+              return _buildShoppingListItem(snapshot.data[index], animation);
+            },
+          );
+        } else if (snapshot.hasError) {
+          return Text("${snapshot.error}");
+        }
+        return CircularProgressIndicator();
       },
     );
   }
 
   Widget _buildShoppingListCard(ShoppingList shoppingList) {
-    int leftToPick = shoppingList.amount - shoppingList.checkedAmount;
+    int leftToPick = shoppingList.rows.length - shoppingList.getCrossedAmount();
     var cardColor = Colors.primaries[Random().nextInt(Colors.primaries.length)];
 
     return Container(
@@ -101,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       Text(
-                        "$leftToPick/${shoppingList.amount}",
+                        "$leftToPick/${shoppingList.rows.length}",
                         style: TextStyle(
                             fontSize: 14,
                             color: Colors.white,
