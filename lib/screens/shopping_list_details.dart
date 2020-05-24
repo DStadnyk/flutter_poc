@@ -60,10 +60,10 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
           LinearPercentIndicator(
             width: 200,
             lineHeight: 7.0,
-            percent: getShoppingListObject().getCheckedAmount() /
+            percent: getShoppingListObject().getCrossedAmount() /
                 getShoppingListObject().rows.length,
             trailing: Text(
-              "${100 * getShoppingListObject().getCheckedAmount() ~/ getShoppingListObject().rows.length}%",
+              "${100 * getShoppingListObject().getCrossedAmount() ~/ getShoppingListObject().rows.length}%",
               style: TextStyle(
                   color: Colors.grey.shade900,
                   fontSize: 16,
@@ -244,85 +244,87 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Stack(children: [
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Hero(
-                tag: widget.shoppingList.id,
-                child: Material(
-                  child: Container(
-                    height: 200,
-                    padding: EdgeInsets.only(top: 40, left: 20, right: 20),
-                    decoration: BoxDecoration(
-                      color: widget.backgroundColor,
-                      boxShadow: [
-                        BoxShadow(
-                          color: widget.backgroundColor.withOpacity(0.4),
-                          spreadRadius: 2,
-                          blurRadius: 10,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
-                      children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.max,
-                          children: <Widget>[
-                            Text(
-                              widget.shoppingList.title,
-                              style: TextStyle(
-                                fontSize: 30,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w900,
+      body: SafeArea(
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Stack(children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Hero(
+                  tag: widget.shoppingList.id,
+                  child: Material(
+                    child: Container(
+                      height: 200,
+                      padding: EdgeInsets.only(top: 40, left: 20, right: 20),
+                      decoration: BoxDecoration(
+                        color: widget.backgroundColor,
+                        boxShadow: [
+                          BoxShadow(
+                            color: widget.backgroundColor.withOpacity(0.4),
+                            spreadRadius: 2,
+                            blurRadius: 10,
+                            offset: Offset(5, 5),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: <Widget>[
+                              Text(
+                                widget.shoppingList.title,
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900,
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text(
-                              "Created on ${widget.shoppingList.dateCreated}",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.grey.shade100,
+                              SizedBox(
+                                height: 20,
                               ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        ),
-                      ],
+                              Text(
+                                "Created on ${widget.shoppingList.dateCreated}",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.grey.shade100,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 35),
-              _buildProgressBar(),
-              SizedBox(
-                height: 15,
-              ),
-              _buildProductsList(context),
-            ],
-          ),
-          Positioned(
-            top: 20,
-            left: 5,
-            child: _buildTopBar(),
-          )
-        ]),
+                SizedBox(height: 35),
+                _buildProgressBar(),
+                SizedBox(
+                  height: 15,
+                ),
+                _buildProductsList(context),
+              ],
+            ),
+            Positioned(
+              top: 5,
+              left: 5,
+              child: _buildTopBar(),
+            )
+          ]),
+        ),
       ),
     );
   }

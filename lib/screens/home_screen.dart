@@ -28,20 +28,27 @@ class _HomeScreenState extends State<HomeScreen> {
       future: futureShoppingList,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return AnimatedList(
-            key: _listKey,
-            shrinkWrap: false,
-            physics: BouncingScrollPhysics(),
-            padding: EdgeInsets.only(top: 20),
-            initialItemCount: snapshot.data.length,
-            itemBuilder: (context, index, animation) {
-              return _buildShoppingListItem(snapshot.data[index], animation);
-            },
+          return Expanded(
+            child: AnimatedList(
+              key: _listKey,
+              shrinkWrap: false,
+              physics: BouncingScrollPhysics(),
+              padding: EdgeInsets.only(top: 20),
+              initialItemCount: snapshot.data.length,
+              itemBuilder: (context, index, animation) {
+                return _buildShoppingListItem(snapshot.data[index], animation);
+              },
+            ),
           );
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
         }
-        return CircularProgressIndicator();
+        return Expanded(
+            child: Center(
+                child: CircularProgressIndicator(
+          backgroundColor: Colors.white,
+          valueColor: AlwaysStoppedAnimation<Color>(Color(0xff990f99)),
+        )));
       },
     );
   }
@@ -179,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: 10,
                   ),
-                  Expanded(child: _buildShoppingLists())
+                  _buildShoppingLists(),
                 ],
               )),
         ),
