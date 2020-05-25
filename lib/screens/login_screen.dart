@@ -184,7 +184,6 @@ class _LoginScreenState extends State<LoginScreen> {
             letterSpacing: 1.5,
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans',
           ),
         ),
       ),
@@ -241,27 +240,24 @@ class _LoginScreenState extends State<LoginScreen> {
         value: SystemUiOverlayStyle.light,
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Stack(
-            children: <Widget>[
-              Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: new BoxDecoration(
-                    gradient: LinearGradient(
-                  colors: [Color(0xff1f458f), Color(0xff6b0b6b)],
-                  stops: [0, 1],
-                  begin: Alignment(-0.99, -0.12),
-                  end: Alignment(0.99, 0.12),
-                  // angle: 97,
-                  // scale: undefined,
-                )),
+          child: SingleChildScrollView(
+            child: Container(
+              decoration: new BoxDecoration(
+                  gradient: LinearGradient(
+                colors: [Color(0xff1f458f), Color(0xff6b0b6b)],
+                stops: [0, 1],
+                begin: Alignment(-0.99, -0.12),
+                end: Alignment(0.99, 0.12),
+                // angle: 97,
+                // scale: undefined,
+              )),
+              padding: EdgeInsets.symmetric(
+                horizontal: 40.0,
               ),
-              Container(
-                height: double.infinity,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 40.0,
-                  ),
+              child: SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                      maxHeight: MediaQuery.of(context).size.height),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -288,8 +284,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
-              )
-            ],
+              ),
+            ),
           ),
         ),
       ),
