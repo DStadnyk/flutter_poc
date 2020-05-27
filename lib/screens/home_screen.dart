@@ -76,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Colors.white,
             child: Container(
               height: 150,
+              width: double.infinity,
               padding: EdgeInsets.all(20),
               margin: EdgeInsets.only(bottom: 30),
               decoration: BoxDecoration(
@@ -90,14 +91,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Column(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         shoppingList.title,
@@ -107,23 +108,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontWeight: FontWeight.w900,
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Created on ${shoppingList.dateCreated}",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.grey.shade100,
-                        ),
-                      )
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    children: <Widget>[
                       Text(
                         "$leftToPick/${shoppingList.rows.length}",
                         style: TextStyle(
@@ -133,6 +117,38 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      RichText(
+                        text: TextSpan(
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.grey.shade100,
+                            ),
+                            children: [
+                              TextSpan(text: 'Created by '),
+                              TextSpan(
+                                text: shoppingList.customerId,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.grey.shade100,
+                                ),
+                              ),
+                            ]),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
@@ -148,9 +164,29 @@ class _HomeScreenState extends State<HomeScreen> {
         sizeFactor: animation, child: _buildShoppingListCard(shoppingList));
   }
 
+  Widget _buildBottomNavigationBar() {
+    return BottomNavigationBar(
+      currentIndex: 0,
+      selectedItemColor: Color(0xff990f99),
+      items: [
+        BottomNavigationBarItem(
+          icon: new Icon(Icons.shopping_basket),
+          title: new Text('Home'),
+        ),
+        BottomNavigationBarItem(
+          icon: new Icon(Icons.mail),
+          title: new Text('Notifications'),
+        ),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.person), title: Text('Profile'))
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: _buildBottomNavigationBar(),
       body: SafeArea(
         child: AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle.light,
@@ -169,17 +205,38 @@ class _HomeScreenState extends State<HomeScreen> {
                       right: 20.0,
                       top: 10,
                     ),
-                    child: Column(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
                           "Shopping lists",
                           style: TextStyle(
                             fontWeight: FontWeight.w900,
-                            fontFamily: "OpenSans",
-                            fontSize: 25,
+                            fontSize: 30,
                           ),
                           textAlign: TextAlign.start,
                         ),
+                        MaterialButton(
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.add,
+                                color: Colors.white,
+                                size: 18,
+                              ),
+                              Text(
+                                'Create',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16)),
+                          color: Color(0xff990f99),
+                        )
                       ],
                     ),
                   ),

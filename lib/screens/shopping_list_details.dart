@@ -264,8 +264,8 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                       boxShadow: [
                         BoxShadow(
                           color: widget.backgroundColor.withOpacity(0.4),
-                          spreadRadius: 2,
-                          blurRadius: 10,
+                          spreadRadius: 1,
+                          blurRadius: 7,
                           offset: Offset(5, 5),
                         ),
                       ],
@@ -291,13 +291,37 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                             SizedBox(
                               height: 20,
                             ),
-                            Text(
-                              "Created on ${widget.shoppingList.dateCreated}",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.grey.shade100,
-                              ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.person,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.grey.shade100,
+                                      ),
+                                      children: [
+                                        TextSpan(text: 'Created by '),
+                                        TextSpan(
+                                          text: widget.shoppingList.customerId,
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.grey.shade100,
+                                          ),
+                                        ),
+                                      ]),
+                                ),
+                              ],
                             ),
                             SizedBox(
                               height: 20,
@@ -309,7 +333,7 @@ class _ShoppingListDetailsScreenState extends State<ShoppingListDetailsScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 35),
+              SizedBox(height: 15),
               _buildProgressBar(),
               SizedBox(
                 height: 15,

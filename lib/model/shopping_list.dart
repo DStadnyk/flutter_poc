@@ -7,15 +7,13 @@ class ShoppingList {
   String dateCreated;
   List<Product> rows;
 
-  ShoppingList(
-      {this.id, this.title, this.customerId, this.dateCreated, this.rows});
+  ShoppingList({this.id, this.title, this.customerId, this.rows});
 
   factory ShoppingList.fromJson(Map<String, dynamic> json) {
     return ShoppingList(
       id: json["id"] as int,
       title: json["title"] as String,
       customerId: json["customerId"] as String,
-      dateCreated: json["dateCreated"] as String,
       rows: (json['rows'] as List)
           .map((product) => Product.fromJson(product))
           .toList(),
