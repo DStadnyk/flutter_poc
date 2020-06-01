@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutterapp/model/shopping_list.dart';
+import 'package:flutterapp/screens/create_shopping_list.dart';
 import 'package:flutterapp/screens/shopping_list_details.dart';
 import 'package:flutterapp/web_services/shopping_list_web_service.dart';
 
@@ -188,65 +188,69 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       bottomNavigationBar: _buildBottomNavigationBar(),
       body: SafeArea(
-        child: AnnotatedRegion<SystemUiOverlayStyle>(
-          value: SystemUiOverlayStyle.light,
-          child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(
-                      left: 20.0,
-                      right: 20.0,
-                      top: 10,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          "Shopping lists",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 30,
-                          ),
-                          textAlign: TextAlign.start,
+        child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.white,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(
+                    left: 20.0,
+                    right: 20.0,
+                    top: 10,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        "Shopping lists",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 30,
                         ),
-                        MaterialButton(
-                          child: Row(
-                            children: <Widget>[
-                              Icon(
-                                Icons.add,
-                                color: Colors.white,
-                                size: 18,
-                              ),
-                              Text(
-                                'Create',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
-                          onPressed: () {},
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16)),
-                          color: Color(0xff990f99),
-                        )
-                      ],
-                    ),
+                        textAlign: TextAlign.start,
+                      ),
+                      MaterialButton(
+                        child: Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.add,
+                              color: Colors.white,
+                              size: 18,
+                            ),
+                            Text(
+                              'Create',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    CreateShoppingListScreen()),
+                          );
+                        },
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16)),
+                        color: Color(0xff990f99),
+                      )
+                    ],
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  _buildShoppingLists(),
-                ],
-              )),
-        ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                _buildShoppingLists(),
+              ],
+            )),
       ),
     );
   }
