@@ -4,7 +4,6 @@ class ShoppingList {
   int id;
   String title;
   String customerId;
-  String dateCreated;
   List<Product> rows;
 
   ShoppingList({this.id, this.title, this.customerId, this.rows});
@@ -18,6 +17,14 @@ class ShoppingList {
           .map((product) => Product.fromJson(product))
           .toList(),
     );
+  }
+
+  toJson() {
+    return {
+      'title': title,
+      'customerId': customerId,
+      'rows': rows,
+    };
   }
 
   getCheckedAmount() {

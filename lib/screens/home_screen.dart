@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/model/shopping_list.dart';
 import 'package:flutterapp/screens/create_shopping_list.dart';
 import 'package:flutterapp/screens/shopping_list_details.dart';
-import 'package:flutterapp/web_services/shopping_list_web_service.dart';
+import 'package:flutterapp/services/mock_shopping_list_service.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
