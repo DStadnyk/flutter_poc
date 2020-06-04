@@ -1,27 +1,21 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/model/shopping_list.dart';
-import 'package:flutterapp/screens/create_shopping_list.dart';
-import 'package:flutterapp/screens/shopping_list_details.dart';
+import 'package:flutterapp/screens/shopping_list_details.screen.dart';
 import 'package:flutterapp/web_services/shopping_list_web_service.dart';
+import 'package:random_color/random_color.dart';
 
-class HomeScreen extends StatefulWidget {
+import 'create_shopping_list.screen.dart';
+
+class ShoppingListsScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _ShoppingListsScreenState createState() => _ShoppingListsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
-
+  final RandomColor _randomColor = new RandomColor();
   Future<List<ShoppingList>> futureShoppingList;
-
-  @override
-  void initState() {
-    super.initState();
-    futureShoppingList = ShoppingListWS.getShoppingLists();
-  }
 
   Widget _buildShoppingLists() {
     return FutureBuilder(
@@ -55,7 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildShoppingListCard(ShoppingList shoppingList) {
     int leftToPick = shoppingList.rows.length - shoppingList.getCrossedAmount();
-    var cardColor = Colors.primaries[Random().nextInt(Colors.primaries.length)];
+    var cardColor = _randomColor.randomColor(
+        colorSaturation: ColorSaturation.mediumSaturation,
+        colorBrightness: ColorBrightness.dark);
 
     return Container(
       width: double.infinity,
@@ -164,94 +160,75 @@ class _HomeScreenState extends State<HomeScreen> {
         sizeFactor: animation, child: _buildShoppingListCard(shoppingList));
   }
 
-  Widget _buildBottomNavigationBar() {
-    return BottomNavigationBar(
-      currentIndex: 0,
-      selectedItemColor: Color(0xff990f99),
-      items: [
-        BottomNavigationBarItem(
-          icon: new Icon(Icons.shopping_basket),
-          title: new Text('Home'),
-        ),
-        BottomNavigationBarItem(
-          icon: new Icon(Icons.mail),
-          title: new Text('Notifications'),
-        ),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.person), title: Text('Profile'))
-      ],
-    );
+  @override
+  void initState() {
+    super.initState();
+    futureShoppingList = ShoppingListWS.getShoppingLists();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: _buildBottomNavigationBar(),
-      body: SafeArea(
-        child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Colors.white,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Container(
-                  padding: EdgeInsets.only(
-                    left: 20.0,
-                    right: 20.0,
-                    top: 10,
+    return Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(
+                left: 20.0,
+                right: 20.0,
+                top: 10,
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "Shopping lists",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 30,
+                    ),
+                    textAlign: TextAlign.start,
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "Shopping lists",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w900,
-                          fontSize: 30,
+                  MaterialButton(
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 18,
                         ),
-                        textAlign: TextAlign.start,
-                      ),
-                      MaterialButton(
-                        child: Row(
-                          children: <Widget>[
-                            Icon(
-                              Icons.add,
-                              color: Colors.white,
-                              size: 18,
-                            ),
-                            Text(
-                              'Create',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
+                        Text(
+                          'Create',
+                          style: TextStyle(color: Colors.white),
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    CreateShoppingListScreen()),
-                          );
-                        },
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16)),
-                        color: Color(0xff990f99),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                _buildShoppingLists(),
-              ],
-            )),
-      ),
-    );
+                      ],
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CreateShoppingListScreen()),
+                      );
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16)),
+                    color: Color(0xff990f99),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            _buildShoppingLists(),
+          ],
+        ));
   }
 }
