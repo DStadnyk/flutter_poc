@@ -3,8 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterapp/model/shopping_list.dart';
 import 'package:flutterapp/services/provider_service.dart';
 import 'dart:convert';
-
-import 'shopping_list_stub.dart';
+import '../stubs/shopping_list_stub.dart';
 
 void main() {
   ProviderService _sut;
