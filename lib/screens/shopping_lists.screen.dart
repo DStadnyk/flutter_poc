@@ -1,9 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/model/shopping_list.dart';
 import 'package:flutterapp/screens/shopping_list_details.screen.dart';
 import 'package:flutterapp/web_services/shopping_list_web_service.dart';
-import 'package:random_color/random_color.dart';
 
 import 'create_shopping_list.screen.dart';
 
@@ -14,7 +15,6 @@ class ShoppingListsScreen extends StatefulWidget {
 
 class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
-  final RandomColor _randomColor = new RandomColor();
   Future<List<ShoppingList>> futureShoppingList;
 
   Widget _buildShoppingLists() {
@@ -40,18 +40,15 @@ class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
         return Expanded(
             child: Center(
                 child: CircularProgressIndicator(
-          backgroundColor: Colors.white,
-          valueColor: AlwaysStoppedAnimation<Color>(Color(0xff990f99)),
-        )));
+                  backgroundColor: Colors.white,
+                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xff990f99)),
+                )));
       },
     );
   }
 
   Widget _buildShoppingListCard(ShoppingList shoppingList) {
-    int leftToPick = shoppingList.rows.length - shoppingList.getCrossedAmount();
-    var cardColor = _randomColor.randomColor(
-        colorSaturation: ColorSaturation.mediumSaturation,
-        colorBrightness: ColorBrightness.dark);
+    var cardColor = Colors.primaries[Random().nextInt(Colors.primaries.length)];
 
     return Container(
       width: double.infinity,
@@ -62,9 +59,9 @@ class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
               context,
               MaterialPageRoute(
                   builder: (context) => ShoppingListDetailsScreen(
-                        shoppingList: shoppingList,
-                        backgroundColor: cardColor,
-                      )));
+                    shoppingList: shoppingList,
+                    backgroundColor: cardColor,
+                  )));
         },
         child: Hero(
           tag: shoppingList.id,
@@ -105,7 +102,7 @@ class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
                         ),
                       ),
                       Text(
-                        "$leftToPick/${shoppingList.rows.length}",
+                        "${shoppingList.getCrossedAmount()}/${shoppingList.rows.length}",
                         style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
@@ -154,8 +151,7 @@ class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
     );
   }
 
-  Widget _buildShoppingListItem(
-      ShoppingList shoppingList, Animation animation) {
+  Widget _buildShoppingListItem(ShoppingList shoppingList, Animation animation) {
     return SizeTransition(
         sizeFactor: animation, child: _buildShoppingListCard(shoppingList));
   }
