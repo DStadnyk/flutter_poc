@@ -4,20 +4,31 @@ class ShoppingList {
   int id;
   String title;
   String customerId;
-  String dateCreated;
   List<Product> rows;
 
   ShoppingList({this.id, this.title, this.customerId, this.rows});
 
   factory ShoppingList.fromJson(Map<String, dynamic> json) {
-    return ShoppingList(
-      id: json["id"] as int,
-      title: json["title"] as String,
-      customerId: json["customerId"] as String,
-      rows: (json['rows'] as List)
+    var shoppingList = ShoppingList(
+        id: json["id"] as int,
+        title: json["title"] as String,
+        customerId: json["customerId"] as String);
+
+    if (json['rows'] != null) {
+      shoppingList.rows = (json['rows'] as List)
           .map((product) => Product.fromJson(product))
-          .toList(),
-    );
+          .toList();
+    }
+
+    return shoppingList;
+  }
+
+  toJson() {
+    return {
+      'title': title,
+      'customerId': customerId,
+      'rows': rows,
+    };
   }
 
   getCheckedAmount() {
