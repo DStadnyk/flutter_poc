@@ -1,9 +1,11 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/blocs/shopping_list_bloc.dart';
 import 'package:flutterapp/model/shopping_list.dart';
 import 'package:flutterapp/screens/create_shopping_list.dart';
 import 'package:flutterapp/screens/shopping_list_details.dart';
+import 'package:flutterapp/services/customer_service.dart';
 import 'package:flutterapp/services/provider_service.dart';
 import 'package:flutterapp/services/shopping_list_service.dart';
 
@@ -14,20 +16,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey();
-  ShoppingListService _shoppingListService;
-
-  Future<List<ShoppingList>> futureShoppingList;
+  ShoppingListBloc _block;
 
   @override
   void initState() {
     super.initState();
-    _shoppingListService = ShoppingListService(ProviderService());
-    futureShoppingList = _shoppingListService.getShoppingListsAsync("mohed@hotmail.com");
+    _block = ShoppingListBloc(
+        CustomerService(), ShoppingListService(ProviderService()));
+    _block.uppdateShoppingList();
   }
 
   Widget _buildShoppingLists() {
-    return FutureBuilder(
-      future: futureShoppingList,
+    return StreamBuilder<List<ShoppingList>>(
+      stream: _block.shoppingListStream,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Expanded(
