@@ -70,9 +70,9 @@ class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
               context,
               MaterialPageRoute(
                   builder: (context) => ShoppingListDetailsScreen(
-                    shoppingList: shoppingList,
-                    backgroundColor: cardColor,
-                  )));
+                        shoppingList: shoppingList,
+                        backgroundColor: cardColor,
+                      )));
         },
         child: Hero(
           tag: shoppingList.id,

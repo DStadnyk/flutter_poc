@@ -6,55 +6,108 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  Widget _buildSliverAppBar() {
-    return CustomScrollView(
-      slivers: <Widget>[
-        SliverAppBar(
-          leading: SizedBox(),
-          expandedHeight: 200.0,
-          floating: true,
-          pinned: true,
-          snap: true,
-          elevation: 50,
-          backgroundColor: Color.fromRGBO(152, 100, 227, 1),
-          flexibleSpace: FlexibleSpaceBar(
-              centerTitle: true,
-              title: Text(
-                'Profile',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700),
-              ),
-              background: Image.asset(
-                'assets/images/ExtendaRetail_thumb.jpg',
-                fit: BoxFit.cover,
-              )),
-        ),
-        new SliverList(delegate: new SliverChildListDelegate(_buildList(50))),
-      ],
-    );
-  }
-
-  List _buildList(int count) {
-    List<Widget> listItems = List();
-
-    for (int i = 0; i < count; i++) {
-      listItems.add(new Padding(
-          padding: new EdgeInsets.all(20.0),
-          child: new Text('Item ${i.toString()}',
-              style: new TextStyle(fontSize: 25.0))));
-    }
-
-    return listItems;
-  }
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      child: _buildSliverAppBar(),
+      child: Container(
+        padding: EdgeInsets.only(
+          left: 20.0,
+          right: 20.0,
+          top: 10,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Text(
+                  'Profile',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 30,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Expanded(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        TextFormField(
+                          decoration: InputDecoration(
+                              hintText: 'Enter a memberId',
+                              labelText: 'MemberId'),
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'Please enter some text';
+                            }
+                            return null;
+                          },
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                              hintText: 'Enter a server address',
+                              labelText: 'Server'),
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'Please enter some text';
+                            }
+                            return null;
+                          },
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                              hintText: 'Enter a server address',
+                              labelText: 'Member Id'),
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'Please enter memberId';
+                            }
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 25.0),
+                      width: double.infinity,
+                      child: RaisedButton(
+                        elevation: 5.0,
+                        onPressed: () {},
+                        padding: EdgeInsets.all(15.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                        color: Colors.white,
+                        child: Text(
+                          'Submit',
+                          style: TextStyle(
+                            color: Color(0xff990f99),
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

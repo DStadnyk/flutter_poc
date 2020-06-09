@@ -7,26 +7,7 @@ class CreateShoppingListScreen extends StatefulWidget {
 }
 
 class _CreateShoppingListScreenState extends State<CreateShoppingListScreen> {
-  final _createShoppingListFormScreenKey = GlobalKey<FormState>();
-
-  Widget _buildShoppingListNameTF() {
-    return TextField(
-      style: TextStyle(
-        color: Colors.grey.shade900,
-      ),
-      decoration: InputDecoration(
-        labelText: 'Name',
-        labelStyle: TextStyle(
-          color: Colors.grey.shade800,
-        ),
-        contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
-        hintText: 'Enter a name here ...',
-        hintStyle: TextStyle(
-          color: Colors.grey.shade600,
-        ),
-      ),
-    );
-  }
+  final _createShoppingListFormKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -55,13 +36,44 @@ class _CreateShoppingListScreenState extends State<CreateShoppingListScreen> {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Form(
-                key: _createShoppingListFormScreenKey,
+                key: _createShoppingListFormKey,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    _buildShoppingListNameTF(),
+                    TextField(
+                      style: TextStyle(
+                        color: Colors.grey.shade900,
+                      ),
+                      decoration: InputDecoration(
+                        labelText: 'Title',
+                        labelStyle: TextStyle(
+                          color: Colors.grey.shade800,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
+                        hintText: 'Enter a title here ...',
+                        hintStyle: TextStyle(
+                          color: Colors.grey.shade600,
+                        ),
+                      ),
+                    ),
+                    TextField(
+                      style: TextStyle(
+                        color: Colors.grey.shade900,
+                      ),
+                      decoration: InputDecoration(
+                        labelText: 'id',
+                        labelStyle: TextStyle(
+                          color: Colors.grey.shade800,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
+                        hintText: 'Enter an id here ...',
+                        hintStyle: TextStyle(
+                          color: Colors.grey.shade600,
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       height: 20,
                     ),
