@@ -1,9 +1,9 @@
 import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/model/shopping_list.dart';
-import 'package:flutterapp/screens/create_shopping_list.dart';
-import 'package:flutterapp/screens/shopping_list_details.dart';
+import 'package:flutterapp/screens/shopping_list_details.screen.dart';
 import 'package:flutterapp/services/provider_service.dart';
 import 'package:flutterapp/services/shopping_list_service.dart';
 
@@ -24,7 +24,8 @@ class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
   void initState() {
     super.initState();
     _shoppingListService = ShoppingListService(ProviderService());
-    futureShoppingList = _shoppingListService.getShoppingListsAsync("mohed@hotmail.com");
+    futureShoppingList =
+        _shoppingListService.getShoppingListsAsync("mohed@hotmail.com");
   }
 
   Widget _buildShoppingLists() {
@@ -50,9 +51,9 @@ class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
         return Expanded(
             child: Center(
                 child: CircularProgressIndicator(
-                  backgroundColor: Colors.white,
-                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xff990f99)),
-                )));
+          backgroundColor: Colors.white,
+          valueColor: AlwaysStoppedAnimation<Color>(Color(0xff990f99)),
+        )));
       },
     );
   }
@@ -161,15 +162,10 @@ class _ShoppingListsScreenState extends State<ShoppingListsScreen> {
     );
   }
 
-  Widget _buildShoppingListItem(ShoppingList shoppingList, Animation animation) {
+  Widget _buildShoppingListItem(ShoppingList shoppingList,
+      Animation animation) {
     return SizeTransition(
         sizeFactor: animation, child: _buildShoppingListCard(shoppingList));
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    futureShoppingList = ShoppingListWS.getShoppingLists();
   }
 
   @override
