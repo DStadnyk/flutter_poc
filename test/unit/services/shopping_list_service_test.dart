@@ -35,9 +35,9 @@ void main() {
 
   test('Delete a shopping list with a specific id', () async {
     var id = 186;
-    
+
     var actual = await _sut.deleteShoppingListAsync(id);
 
-    expect(actual, true );
+    expect(actual, true);
   });
 }

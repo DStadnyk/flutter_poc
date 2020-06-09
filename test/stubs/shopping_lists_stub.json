@@ -1,931 +1,1951 @@
 [
   {
+<<<<<<< HEAD
+=======
+    "id": 1,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
     "title": "Computers",
     "customerId": "Julianna.Ellesworth@gmail.com",
     "rows": [
       {
+<<<<<<< HEAD
+=======
+        "id": 1,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "3f82c350-aa46-44a6-a35b-d2db87759b5c",
         "name": "Cookies - Englishbay Chochip",
         "quantity": 24,
         "checked": true,
         "crossed": false,
         "categoryName": "Industrial",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 2,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "c4311ccd-0932-4ef0-ae61-7ec438803cf6",
         "name": "Peppercorns - Pink",
         "quantity": 7,
         "checked": false,
         "crossed": false,
         "categoryName": "Industrial",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 3,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "bacaef16-e1d6-49fe-a202-4d4ddea73d4f",
         "name": "Almonds Ground Blanched",
         "quantity": 15,
         "checked": false,
         "crossed": false,
         "categoryName": "Clothing",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 4,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "77c3326a-b3b1-4968-9c79-b2f3a51288f8",
         "name": "Capers - Ox Eye Daisy",
         "quantity": 22,
         "checked": true,
         "crossed": false,
         "categoryName": "Kids",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 5,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "20e2312d-5e26-4373-ba47-cb6d7e4c48bf",
         "name": "Longos - Burritos",
         "quantity": 9,
         "checked": false,
         "crossed": false,
         "categoryName": "Outdoors",
+<<<<<<< HEAD
         "properties": []
+=======
+        "properties": [
+          {
+          }
+        ]
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
       }
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "id": 6,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
     "title": "Outdoors",
     "customerId": "Julianna.Ellesworth@gmail.com",
     "rows": [
       {
+<<<<<<< HEAD
+=======
+        "id": 1,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "12ead637-8ea7-4088-958c-000713a1993c",
         "name": "Pork - Backs - Boneless",
         "quantity": 13,
         "checked": false,
         "crossed": false,
         "categoryName": "Grocery",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 2,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "70404cfe-6bcd-40d4-9056-e04b082ad0ea",
         "name": "Salt - Sea",
         "quantity": 20,
         "checked": true,
         "crossed": true,
         "categoryName": "Shoes",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 3,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "feec5f1c-540f-4b50-b408-c8b2210c9462",
         "name": "Wine - Harrow Estates, Vidal",
         "quantity": 5,
         "checked": true,
         "crossed": false,
         "categoryName": "Beauty",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 4,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "ade253bc-66d4-4bd9-8daa-f895ba0df211",
         "name": "Cheese - Romano, Grated",
         "quantity": 13,
         "checked": true,
         "crossed": false,
         "categoryName": "Garden",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 5,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "e3d0f1f2-f90e-4f85-afd0-2fdf61f37028",
         "name": "Pepperoni Slices",
         "quantity": 2,
         "checked": false,
         "crossed": true,
         "categoryName": "Electronics",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 6,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "a1c325bf-0c14-47ee-b03e-c1493a42abbf",
         "name": "Olives - Green, Pitted",
         "quantity": 17,
         "checked": true,
         "crossed": true,
         "categoryName": "Computers",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 7,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "374b459e-c5b4-4402-ad4f-bd317a312823",
         "name": "Chocolate - Liqueur Cups With Foil",
         "quantity": 13,
         "checked": true,
         "crossed": false,
         "categoryName": "Shoes",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 8,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "7af9d35b-6c2c-4f8d-8a51-318e349a2700",
         "name": "Bread - Roll, Italian",
         "quantity": 16,
         "checked": true,
         "crossed": true,
         "categoryName": "Computers",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 9,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "56a68738-c98a-46d0-9767-d6506c75d8c1",
         "name": "Sprouts - Bean",
         "quantity": 4,
         "checked": true,
         "crossed": true,
         "categoryName": "Baby",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 10,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "63ede345-166c-4f3f-b345-51dcf7032f89",
         "name": "Hot Chocolate - Individual",
         "quantity": 5,
         "checked": true,
         "crossed": true,
         "categoryName": "Health",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 11,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "708b8dca-7888-42db-9f75-06e65e00602a",
         "name": "Rice - Jasmine Sented",
         "quantity": 4,
         "checked": true,
         "crossed": false,
         "categoryName": "Automotive",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 12,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "a75a2c77-6aa1-4f93-b6c1-8b4821e36b88",
         "name": "Vinegar - White",
         "quantity": 22,
         "checked": true,
         "crossed": true,
         "categoryName": "Tools",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 13,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "29db6c45-2746-48fc-92e5-8dca267f105a",
         "name": "Tofu - Firm",
         "quantity": 23,
         "checked": false,
         "crossed": false,
         "categoryName": "Baby",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 14,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "f7f30776-0274-4887-ac83-3b3e89f28a96",
         "name": "Cheese - Swiss",
         "quantity": 18,
         "checked": false,
         "crossed": false,
         "categoryName": "Kids",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 15,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "9b083fb0-e28f-4eea-b076-9cb0a3e4ada3",
         "name": "Pork Loin Bine - In Frenched",
         "quantity": 11,
         "checked": false,
         "crossed": true,
         "categoryName": "Clothing",
+<<<<<<< HEAD
         "properties": []
+=======
+        "properties": [
+          {
+          }
+        ]
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
       }
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "id": 7,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
     "title": "Computers",
     "customerId": "Julianna.Ellesworth@gmail.com",
     "rows": [
       {
+<<<<<<< HEAD
+=======
+        "id": 1,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "a9f1fd70-2c77-457c-a43d-04cc45c7cdb0",
         "name": "Bread - Raisin Walnut Oval",
         "quantity": 12,
         "checked": false,
         "crossed": true,
         "categoryName": "Garden",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 2,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "98ca30e6-e78f-4573-adfc-33c302140010",
         "name": "Mushroom - Trumpet, Dry",
         "quantity": 21,
         "checked": false,
         "crossed": true,
         "categoryName": "Baby",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 3,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "5292d52a-cc03-4133-b805-a48ed0419bc5",
         "name": "Apple - Fuji",
         "quantity": 17,
         "checked": true,
         "crossed": false,
         "categoryName": "Garden",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 4,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "60bd3035-ae35-45fd-80ae-69aba31792a3",
         "name": "Energy Drink Red Bull",
         "quantity": 21,
         "checked": true,
         "crossed": false,
         "categoryName": "Electronics",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 5,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "e90ec816-60da-4ce7-8bbb-cf57f9f944b4",
         "name": "Lemonade - Strawberry, 591 Ml",
         "quantity": 17,
         "checked": false,
         "crossed": true,
         "categoryName": "Toys",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 6,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "b1370917-a40f-4412-8eb6-c7bef001bbbf",
         "name": "Juice - Apple Cider",
         "quantity": 1,
         "checked": true,
         "crossed": false,
         "categoryName": "Electronics",
+<<<<<<< HEAD
         "properties": []
+=======
+        "properties": [
+          {
+          }
+        ]
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
       }
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "id": 8,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
     "title": "Jewelery",
     "customerId": "Julianna.Ellesworth@gmail.com",
     "rows": [
       {
+<<<<<<< HEAD
+=======
+        "id": 1,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "b92bc94e-8e92-4a10-9153-c6f44ff92bea",
         "name": "Salmon - Whole, 4 - 6 Pounds",
         "quantity": 9,
         "checked": true,
         "crossed": false,
         "categoryName": "Grocery",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 2,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "1ec53885-41a7-4ad0-9858-ed3494e89bfe",
         "name": "Wine - Alicanca Vinho Verde",
         "quantity": 17,
         "checked": true,
         "crossed": true,
         "categoryName": "Beauty",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 3,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "808dc9a3-6131-46a6-9b91-1dcfff991084",
         "name": "The Pop Shoppe Pinapple",
         "quantity": 16,
         "checked": false,
         "crossed": false,
         "categoryName": "Computers",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 4,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "df1d5a3b-c068-47c2-956f-7215d5dd7de7",
         "name": "Bandage - Finger Cots",
         "quantity": 20,
         "checked": false,
         "crossed": false,
         "categoryName": "Computers",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 5,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "371bd28a-0122-4221-b526-b4306cc9ad47",
         "name": "Rhubarb",
         "quantity": 13,
         "checked": true,
         "crossed": true,
         "categoryName": "Jewelery",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 6,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "274cc856-bfba-4316-a200-039bf30eed4e",
         "name": "Squash - Guords",
         "quantity": 15,
         "checked": true,
         "crossed": false,
         "categoryName": "Grocery",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 7,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "bd55993a-5444-4958-81cf-237f4e5fa07f",
         "name": "Banana - Green",
         "quantity": 18,
         "checked": true,
         "crossed": false,
         "categoryName": "Beauty",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 8,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "a45bd59f-ad94-4b86-8fb0-1fe49dcd8b2c",
         "name": "Placemat - Scallop, White",
         "quantity": 17,
         "checked": true,
         "crossed": false,
         "categoryName": "Shoes",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 9,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "0b70cb52-4945-422b-8c0c-9e941d8c0adc",
         "name": "Artichoke - Bottom, Canned",
         "quantity": 9,
         "checked": true,
         "crossed": true,
         "categoryName": "Books",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 10,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "2033bdcc-9c0d-4410-8cda-d7ad993e824c",
         "name": "Appetizer - Mini Egg Roll, Shrimp",
         "quantity": 20,
         "checked": false,
         "crossed": false,
         "categoryName": "Clothing",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 11,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "cba266e9-43aa-4555-8331-fa28a2eb3f17",
         "name": "Chip - Potato Dill Pickle",
         "quantity": 7,
         "checked": true,
         "crossed": true,
         "categoryName": "Computers",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 12,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "45dfa4af-d937-4e60-9632-4812928dd906",
         "name": "Bread - Roll, Canadian Dinner",
         "quantity": 21,
         "checked": false,
         "crossed": true,
         "categoryName": "Clothing",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 13,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "3a971dba-6399-42ef-a90a-53023a496cce",
         "name": "Sambuca Cream",
         "quantity": 19,
         "checked": false,
         "crossed": false,
         "categoryName": "Industrial",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 14,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "9f780505-8b9e-4280-8ef6-ea2249ae12b6",
         "name": "Ham - Cooked Italian",
         "quantity": 17,
         "checked": true,
         "crossed": true,
         "categoryName": "Kids",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 15,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "e3611e18-d7a7-4e4e-bc1a-c015d215d75b",
         "name": "Lamb - Bones",
         "quantity": 25,
         "checked": true,
         "crossed": true,
         "categoryName": "Books",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 16,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "3b804a74-326c-47a1-903a-003dfb1977d3",
         "name": "Table Cloth 54x54 White",
         "quantity": 2,
         "checked": true,
         "crossed": true,
         "categoryName": "Automotive",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 17,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "ce33f893-4a6f-4fa1-92ab-25be1d4884a1",
         "name": "Sage - Fresh",
         "quantity": 12,
         "checked": false,
         "crossed": false,
         "categoryName": "Beauty",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 18,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "5ed210ce-41df-47f2-b417-77292bed7a16",
         "name": "Cabbage - Savoy",
         "quantity": 17,
         "checked": false,
         "crossed": true,
         "categoryName": "Games",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 19,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "04ffe17d-2d33-441d-a11c-ec023c917c7f",
         "name": "Beer - Blue Light",
         "quantity": 24,
         "checked": false,
         "crossed": false,
         "categoryName": "Industrial",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 20,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "b55f1cd0-cfb6-4801-b242-695a66bb7f81",
         "name": "Cake - Box Window 10x10x2.5",
         "quantity": 21,
         "checked": false,
         "crossed": false,
         "categoryName": "Movies",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 21,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "39835f85-c551-41be-95e6-8fab5da3731b",
         "name": "Lamb - Whole, Fresh",
         "quantity": 9,
         "checked": true,
         "crossed": true,
         "categoryName": "Games",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 22,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "5ffd9240-9401-41fa-a116-92a9ca4c8108",
         "name": "Apple - Delicious, Red",
         "quantity": 20,
         "checked": true,
         "crossed": true,
         "categoryName": "Garden",
+<<<<<<< HEAD
         "properties": []
+=======
+        "properties": [
+          {
+          }
+        ]
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
       }
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "id": 9,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
     "title": "Grocery",
     "customerId": "Julianna.Ellesworth@gmail.com",
     "rows": [
       {
+<<<<<<< HEAD
+=======
+        "id": 1,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "87434097-61b9-4865-8674-b00cd56c052d",
         "name": "Soup - Knorr, French Onion",
         "quantity": 14,
         "checked": false,
         "crossed": false,
         "categoryName": "Games",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 2,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "e390c778-fc0c-4020-96f8-d0c106b88bf9",
         "name": "Wine - Bourgogne 2002, La",
         "quantity": 25,
         "checked": true,
         "crossed": false,
         "categoryName": "Outdoors",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 3,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "52bb6dd0-cd0f-4bf3-b7d3-9c6687b22928",
         "name": "Caviar - Salmon",
         "quantity": 22,
         "checked": true,
         "crossed": true,
         "categoryName": "Home",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 4,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "dfbea4a7-9f87-43c2-87f2-dcf74349e6fe",
         "name": "Pepper - Sorrano",
         "quantity": 12,
         "checked": false,
         "crossed": false,
         "categoryName": "Shoes",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 5,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "dc5698a8-38b5-4764-906c-fcf1ce31aaba",
         "name": "Peas - Pigeon, Dry",
         "quantity": 7,
         "checked": false,
         "crossed": true,
         "categoryName": "Garden",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 6,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "71cb8f6a-1aea-4919-b564-346f50091fdd",
         "name": "Brandy Apricot",
         "quantity": 19,
         "checked": false,
         "crossed": true,
         "categoryName": "Electronics",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 7,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "32c4e83a-ca1f-455c-ab81-041f10b08de6",
         "name": "Island Oasis - Pina Colada",
         "quantity": 25,
         "checked": false,
         "crossed": true,
         "categoryName": "Tools",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 8,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "0d0dd403-9193-434d-bd84-50d2ec20ff35",
         "name": "Cheese - Parmesan Grated",
         "quantity": 10,
         "checked": true,
         "crossed": true,
         "categoryName": "Music",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 9,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "684975eb-fb9f-457d-b971-3ed1ef2a419e",
         "name": "Bag - Bread, White, Plain",
         "quantity": 11,
         "checked": false,
         "crossed": false,
         "categoryName": "Shoes",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 10,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "08de2e56-db73-45f6-9772-9822e9c15d0e",
         "name": "Cheese - Ricotta",
         "quantity": 5,
         "checked": false,
         "crossed": true,
         "categoryName": "Electronics",
+<<<<<<< HEAD
         "properties": []
+=======
+        "properties": [
+          {
+          }
+        ]
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
       }
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "id": 10,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
     "title": "Health",
     "customerId": "Julianna.Ellesworth@gmail.com",
     "rows": [
       {
+<<<<<<< HEAD
+=======
+        "id": 1,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "49918c52-e422-45f1-a1d4-0a60c6dac901",
         "name": "Beef - Kobe Striploin",
         "quantity": 12,
         "checked": false,
         "crossed": true,
         "categoryName": "Outdoors",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 2,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "dd86a3eb-a9f5-4321-ac16-a567debaf56d",
         "name": "C - Plus, Orange",
         "quantity": 7,
         "checked": true,
         "crossed": false,
         "categoryName": "Clothing",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 3,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "d04c6b78-5fcb-4646-a1b0-26bb879a56d1",
         "name": "Pepper - Cayenne",
         "quantity": 24,
         "checked": false,
         "crossed": true,
         "categoryName": "Movies",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 4,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "a6b93193-a46e-40f5-ba53-d0c5550b5bc9",
         "name": "Beer - Upper Canada Lager",
         "quantity": 11,
         "checked": false,
         "crossed": false,
         "categoryName": "Clothing",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 5,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "e4cc56fb-67af-4e45-ba89-b8f8d5cca203",
         "name": "Long Island Ice Tea",
         "quantity": 16,
         "checked": false,
         "crossed": false,
         "categoryName": "Clothing",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 6,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "c444a3e3-a0b0-44ad-a257-0c0e14c4ec80",
         "name": "Transfer Sheets",
         "quantity": 13,
         "checked": false,
         "crossed": false,
         "categoryName": "Toys",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 7,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "2f323928-bf49-47d0-8343-101822d80538",
         "name": "English Muffin",
         "quantity": 1,
         "checked": true,
         "crossed": false,
         "categoryName": "Grocery",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 8,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "fef500f6-7ab9-4edc-9627-106aff459d8e",
         "name": "Shrimp - 31/40",
         "quantity": 6,
         "checked": false,
         "crossed": true,
         "categoryName": "Games",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 9,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "9c63f9ef-f209-4543-96a3-1673e455b3ed",
         "name": "Madeira",
         "quantity": 22,
         "checked": false,
         "crossed": true,
         "categoryName": "Industrial",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 10,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "652a1421-6dd1-4fca-a45e-88a2b0382a8f",
         "name": "Cheese - Feta",
         "quantity": 22,
         "checked": true,
         "crossed": true,
         "categoryName": "Books",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 11,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "1306ea4c-aaec-47c4-b3e0-fd639ba9713b",
         "name": "Wine - Lamancha Do Crianza",
         "quantity": 9,
         "checked": true,
         "crossed": false,
         "categoryName": "Beauty",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 12,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "87ae3f18-2c36-478f-84be-77d9c11ef9e4",
         "name": "Capon - Whole",
         "quantity": 11,
         "checked": false,
         "crossed": false,
         "categoryName": "Shoes",
+<<<<<<< HEAD
         "properties": []
+=======
+        "properties": [
+          {
+          }
+        ]
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
       }
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "id": 11,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
     "title": "Movies",
     "customerId": "Julianna.Ellesworth@gmail.com",
     "rows": [
       {
+<<<<<<< HEAD
+=======
+        "id": 1,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "bee67eac-9ae9-48fa-8a1a-db54f2ca1ea4",
         "name": "Pumpkin - Seed",
         "quantity": 16,
         "checked": false,
         "crossed": true,
         "categoryName": "Kids",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 2,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "2f0a0c91-c424-4a35-8580-53eb5e59cf43",
         "name": "Latex Rubber Gloves Size 9",
         "quantity": 11,
         "checked": false,
         "crossed": false,
         "categoryName": "Jewelery",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 3,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "e8036019-b139-4123-8745-cbed9809ba54",
         "name": "Sage Derby",
         "quantity": 4,
         "checked": true,
         "crossed": false,
         "categoryName": "Sports",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 4,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "268f8e3f-22cb-47c9-975b-d0fc4cf005cd",
         "name": "Longos - Lasagna Beef",
         "quantity": 25,
         "checked": false,
         "crossed": false,
         "categoryName": "Automotive",
+<<<<<<< HEAD
         "properties": []
+=======
+        "properties": [
+          {
+          }
+        ]
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
       }
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "id": 12,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
     "title": "Music",
     "customerId": "Julianna.Ellesworth@gmail.com",
     "rows": [
       {
+<<<<<<< HEAD
+=======
+        "id": 1,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "502b3c4a-b446-4681-9e29-d9c9204e6e33",
         "name": "Tarragon - Fresh",
         "quantity": 18,
         "checked": true,
         "crossed": true,
         "categoryName": "Industrial",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 2,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "2165c872-36b9-4f5f-ab59-82d4c537facd",
         "name": "Chips - Assorted",
         "quantity": 13,
         "checked": true,
         "crossed": false,
         "categoryName": "Baby",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 3,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "664b3cbd-e780-4582-bd7f-c6d6e1e7fd69",
         "name": "Water - Spring Water 500ml",
         "quantity": 22,
         "checked": true,
         "crossed": false,
         "categoryName": "Tools",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 4,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "75f91c4d-be91-4371-8fb1-3e918998a79a",
         "name": "Cookie - Oreo 100x2",
         "quantity": 19,
         "checked": true,
         "crossed": false,
         "categoryName": "Electronics",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 5,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "3fb1498e-59bd-4888-bfde-82b5c11362d7",
         "name": "Lamb - Leg, Diced",
         "quantity": 11,
         "checked": true,
         "crossed": true,
         "categoryName": "Industrial",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 6,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "477cd896-5bd1-4ebf-9400-2696bd6d50cf",
         "name": "Hersey Shakes",
         "quantity": 17,
         "checked": true,
         "crossed": true,
         "categoryName": "Baby",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 7,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "705a7f91-3831-4d21-9d69-bd031e45bbdb",
         "name": "Wine - Zinfandel California 2002",
         "quantity": 4,
         "checked": false,
         "crossed": true,
         "categoryName": "Tools",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 8,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "e9b10b42-0d3a-45f8-bc63-90162c212924",
         "name": "Soup - Campbells Tomato Ravioli",
         "quantity": 2,
         "checked": false,
         "crossed": false,
         "categoryName": "Electronics",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 9,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "1bd5ec34-8e7f-434c-88b8-049e7c896224",
         "name": "Stock - Beef, White",
         "quantity": 3,
         "checked": false,
         "crossed": true,
         "categoryName": "Industrial",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 10,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "69402f16-e5ae-4321-9de9-91777659350e",
         "name": "Tomatoes - Vine Ripe, Yellow",
         "quantity": 8,
         "checked": false,
         "crossed": true,
         "categoryName": "Baby",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 11,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "a988e6e9-6ae3-44a7-a506-f26b25d09a70",
         "name": "Oil - Shortening - All - Purpose",
         "quantity": 7,
         "checked": true,
         "crossed": false,
         "categoryName": "Jewelery",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 12,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "92487e4b-129d-423a-866c-57b76b81adef",
         "name": "Table Cloth 62x114 Colour",
         "quantity": 18,
         "checked": true,
         "crossed": true,
         "categoryName": "Home",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 13,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "bb6f8f5f-7122-4a30-ab5d-0d27117afd85",
         "name": "Wine - Shiraz South Eastern",
         "quantity": 11,
         "checked": true,
         "crossed": false,
         "categoryName": "Toys",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 14,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "f58e15e7-01b6-4416-9dd2-223d5f6d5b00",
         "name": "Wine - Chianti Classica Docg",
         "quantity": 13,
         "checked": true,
         "crossed": false,
         "categoryName": "Home",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 15,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "0c4f2579-38e5-4f8d-b8ee-7a9707dfbf5f",
         "name": "Mustard Prepared",
         "quantity": 24,
         "checked": false,
         "crossed": false,
         "categoryName": "Automotive",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 16,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "a21d6abf-d031-41f6-bfb5-938df2fe51e8",
         "name": "Plastic Wrap",
         "quantity": 13,
         "checked": false,
         "crossed": true,
         "categoryName": "Jewelery",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 17,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "a2796de9-3b40-416a-b820-d498527dc9a3",
         "name": "Durian Fruit",
         "quantity": 1,
         "checked": true,
         "crossed": true,
         "categoryName": "Sports",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 18,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "000212c1-53dd-42a2-895b-8c5e69794084",
         "name": "Crawfish",
         "quantity": 9,
         "checked": false,
         "crossed": true,
         "categoryName": "Baby",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 19,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "51c581fb-5e7b-4709-8712-bd39685e3b66",
         "name": "Beer - Camerons Cream Ale",
         "quantity": 9,
         "checked": false,
         "crossed": true,
         "categoryName": "Health",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 20,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "2882a9cc-761c-4a60-9d5b-77958b3bd261",
         "name": "Yoghurt Tubes",
         "quantity": 22,
         "checked": true,
         "crossed": false,
         "categoryName": "Industrial",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 21,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "d5e27f97-e088-4394-bf5e-b621fe7aab5b",
         "name": "Wanton Wrap",
         "quantity": 7,
         "checked": false,
         "crossed": true,
         "categoryName": "Automotive",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 22,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "120da22c-2c6f-4728-87fa-8950425d72d0",
         "name": "Carrots - Mini, Stem On",
         "quantity": 9,
         "checked": false,
         "crossed": true,
         "categoryName": "Shoes",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 23,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "a5f61b9c-079e-4da1-9eb4-db260ea83080",
         "name": "Savory",
         "quantity": 25,
         "checked": false,
         "crossed": true,
         "categoryName": "Grocery",
+<<<<<<< HEAD
         "properties": []
       },
       {
+=======
+        "properties": [
+          {
+          }
+        ]
+      },
+      {
+        "id": 24,
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
         "gtin": "7bd61623-eb84-475c-a172-2994ebe3960c",
         "name": "Wine - Red, Cabernet Merlot",
         "quantity": 4,
         "checked": true,
         "crossed": true,
         "categoryName": "Toys",
+<<<<<<< HEAD
         "properties": []
+=======
+        "properties": [
+          {
+          }
+        ]
+>>>>>>> b268c12f0ebe4941ec2001e2543a16d9846af0f0
       }
     ]
   }
